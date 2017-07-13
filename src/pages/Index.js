@@ -6,7 +6,7 @@ export class About extends Component {
         return (
             <div className="row container">
                 <div className="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
-                    About
+                    Index
                 </div>
             </div>
         )
