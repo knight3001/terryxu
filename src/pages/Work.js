@@ -18,15 +18,25 @@ class Thumbnail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            playing: false
+            status: "start"
         };
         this.toggle = this.toggle.bind(this);
+        this.handleLoading = this.handleLoading.bind(this);
     }
 
     toggle() {
-        this.setState({
-            playing: !this.state.playing
-        })
+        if (this.state.status === "start") {
+            this.setState({ status: "load" })
+        }
+        else if(this.state.status === "play") {
+            this.setState({ status: "start" })
+        }
+    }
+
+    handleLoading() {
+        if (this.state.status !== "start") {
+            this.setState({ status: "play" })
+        }
     }
 
     render() {
@@ -36,12 +46,23 @@ class Thumbnail extends Component {
             buf.push(<li className="active" key={i}>{keywords[i]}</li>)
         }
 
+        const status = this.state.status;
+        let css = "";
+        if (status === "start") {
+            css = "GifPlayer";
+        }
+        else if (status === "load") {
+            css = "GifPlayer is-loading"
+        }
+        else {
+            css = "GifPlayer is-playing"
+        }
         return (
             <div className="col-lg-4 col-md-4 col-sm-12">
                 <div className="thumb-pad fadeInUp animated" style={{ animationDelay: this.props.delay + "s" }}>
                     <div className="thumbnail">
-                        <div className={"GifPlayer" + (this.state.playing ? " is-playing" : "")} onClick={() => this.toggle()}>
-                            <img src={this.state.playing ? this.props.gif : this.props.jpg} alt={this.props.title} />
+                        <div className={css} onClick={() => this.toggle()}>
+                            <img src={this.state.status === "start" ? this.props.jpg : this.props.gif} onLoad={this.handleLoading} alt={this.props.title} />
                         </div>
                         <div className="caption">
                             <h4><a href={this.props.url} target="_blank">{this.props.title}</a></h4>

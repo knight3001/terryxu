@@ -11,7 +11,7 @@ import Work from './pages/Work';
 import Contact from './pages/Contact';
 import Logo from './img/logo.png';
 
-const BaseUrl = "";
+const BaseUrl = "/terryxu";
 
 const ListItemLink = ({ to, text }) => (
     <Route exact path={to} children={({ match }) => (

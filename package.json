@@ -2,10 +2,10 @@
   "name": "terryxu",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://knight3001.github.io/mysite/",
+  "homepage": "https://knight3001.github.io/terryxu/",
   "repository": {
     "type": "git",
-    "url": "git@github.com:knight3001/mysite.git"
+    "url": "git@github.com:knight3001/terryxu.git"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
