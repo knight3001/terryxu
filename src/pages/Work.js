@@ -7,20 +7,51 @@ import BudingJpg from '../img/buding.jpg';
 import IvfJpg from '../img/ivfids.jpg';
 import PlatypusJpg from '../img/platypus.jpg';
 
+import ReactGif from '../img/reactprac.gif';
+import TrendGif from '../img/currencytrend.gif';
+import AngularGif from '../img/angular2prac.gif';
+import BudingGif from '../img/buding.gif';
+import IvfGif from '../img/ivfids.gif';
+import PlatypusGif from '../img/platypus.gif';
+
 class Thumbnail extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            playing: false
+        };
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle() {
+        this.setState({
+            playing: !this.state.playing
+        })
     }
 
     render() {
+        let buf = [];
+        const keywords = this.props.keywords;
+        for (let i = 0; i < keywords.length; i++) {
+            buf.push(<li className="active" key={i}>{keywords[i]}</li>)
+        }
+
         return (
             <div className="col-lg-4 col-md-4 col-sm-12">
-                <div className="thumb-pad fadeInUp animated" style={{animationDelay: this.props.delay + "s"}}>
+                <div className="thumb-pad fadeInUp animated" style={{ animationDelay: this.props.delay + "s" }}>
                     <div className="thumbnail">
-                        <img src={this.props.jpg} alt={this.props.title}/>
+                        <div className={"GifPlayer" + (this.state.playing ? " is-playing" : "")} onClick={() => this.toggle()}>
+                            <img src={this.state.playing ? this.props.gif : this.props.jpg} alt={this.props.title} />
+                        </div>
                         <div className="caption">
-                            <h4>{this.props.title}</h4>
-                            <p>{this.props.description}</p>
+                            <h4><a href={this.props.url} target="_blank">{this.props.title}</a></h4>
+                            <div className="detail">{this.props.description}</div>
+                            <ol className="breadcrumb">
+                                {buf}
+                            </ol>
+                            {this.props.git &&
+                                <div className="code"><span className="icon-extra icon-github"></span> <a href={this.props.git} target="_blank">Code</a></div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -41,43 +72,64 @@ class Work extends Component {
                 <div className="wrapper">
                     <div className="row">
                         <Thumbnail
-                            jpg = {ReactJpg}
-                            title = "Gobang Game"
-                            delay = "0.1"
-                            description = "No matter the problem, we have the team to fix it. Talk to our friendly support personnel today."
+                            jpg={ReactJpg}
+                            gif={ReactGif}
+                            title="Gobang Game"
+                            url="https://knight3001.github.io/ReactPrac/"
+                            delay="0.1"
+                            description="Gobang game, combat with AI, time travelling feature, try to find secret button to trigger easy mode."
+                            keywords={["React", "Bootstrap", "Gulp"]}
+                            git="https://github.com/knight3001/ReactPrac"
                         />
                         <Thumbnail
-                            jpg = {TrendJpg}
-                            title = "Currency Trend"
-                            delay = "0.3"
-                            description = "No matter the problem, we have the team to fix it. Talk to our friendly support personnel today."
+                            jpg={TrendJpg}
+                            gif={TrendGif}
+                            title="Currency Trend"
+                            url="https://knight3001.github.io/CurrencyTrend/"
+                            delay="0.3"
+                            description="Track the latest Currency Exchange rate, based on USD, chart for historical year based data, redux practise."
+                            keywords={["React", "D3", "Redux"]}
+                            git="https://github.com/knight3001/CurrencyTrend"
                         />
                         <Thumbnail
-                            jpg = {AngularJpg}
-                            title = "Student Center"
-                            delay = "0.5"
-                            description = "No matter the problem, we have the team to fix it. Talk to our friendly support personnel today."
+                            jpg={AngularJpg}
+                            gif={AngularGif}
+                            title="Student Center"
+                            url="https://knight3001.github.io/Angular2Prac/#/courses"
+                            delay="0.5"
+                            description="Students, courses, teachers information view and edit."
+                            keywords={["Angular 2", "Bootstrap"]}
+                            git="https://github.com/knight3001/Angular2Prac"
                         />
                     </div>
 
                     <div className="row">
                         <Thumbnail
-                            jpg = {BudingJpg}
-                            title = "Buding Lab"
-                            delay = "0.7"
-                            description = "No matter the problem, we have the team to fix it. Talk to our friendly support personnel today."
+                            jpg={BudingJpg}
+                            gif={BudingGif}
+                            title="Buding Lab"
+                            url="http://www.buding.com.au/almighty/index/brisbane/"
+                            delay="0.7"
+                            description="Pinterest style like social network system, clusttered with google map."
+                            keywords={["Python", "Django", "Google Maps API", "OAuth"]}
                         />
                         <Thumbnail
-                            jpg = {IvfJpg}
-                            title = "City Fertility"
-                            delay = "0.9"
-                            description = "No matter the problem, we have the team to fix it. Talk to our friendly support personnel today."
+                            jpg={IvfJpg}
+                            gif={IvfGif}
+                            title="City Fertility"
+                            url="http://ivfids.platypus.net.au/workdesk/"
+                            delay="0.9"
+                            description="City fertility Center Internal System."
+                            keywords={["VB Script", "VB.NET", "JQuery UI", "Bootstrap"]}
                         />
                         <Thumbnail
-                            jpg = {PlatypusJpg}
-                            title = "Platypus Network"
-                            delay = "1.1"
-                            description = "No matter the problem, we have the team to fix it. Talk to our friendly support personnel today."
+                            jpg={PlatypusJpg}
+                            gif={PlatypusGif}
+                            title="Platypus Network"
+                            url="http://www.platypus.net.au/"
+                            delay="1.1"
+                            description="Platypus networks company website."
+                            keywords={["VB.NET", "JQuery UI", "Bootstrap"]}
                         />
                     </div>
                 </div>
