@@ -28,7 +28,7 @@ class Thumbnail extends Component {
         if (this.state.status === "start") {
             this.setState({ status: "load" })
         }
-        else if(this.state.status === "play") {
+        else {
             this.setState({ status: "start" })
         }
     }
