@@ -4,8 +4,8 @@ export class About extends Component {
 
     render() {
         return (
-            <div className="row container">
-                <div className="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+            <div className="container">
+                <div className="row">
                     Index
                 </div>
             </div>
