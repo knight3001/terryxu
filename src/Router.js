@@ -43,7 +43,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation" onMouseLeave={this.closeToggleNav}>
+            <nav className="navbar navbar-inverse navbar-fixed-top" onMouseLeave={this.closeToggleNav}>
                 <div className="container">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle" data-toggle="collapse" onClick={this.onToggleNav}>

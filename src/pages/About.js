@@ -14,7 +14,7 @@ export class About extends Component {
 
                     <div className="fadeInRight animated" style={{ animationDelay: "0.3s" }}>
                         <div className="profile">
-                            <div className="focus pic"><img src={Photo} width="300" height="300" /></div>
+                            <div className="focus pic"><img src={Photo} width="300" height="300" alt="Profile" /></div>
                             <div className="para para-1" >
                                 Mr Xu is a Software Engineer with well-rounded programming skills and practical
                                 knowledge in both back-end and front-end development. He is a hardworking and
