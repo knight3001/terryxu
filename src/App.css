@@ -146,9 +146,9 @@ table th,td{
     vertical-align: -10%
 }
 
-.btn.btn-1 {
+.btn {
   border: none;
-  background: linear-gradient(to bottom, #51c137 0%, #2da411 100%);
+
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#51c137', endColorstr='#2da411', GradientType=0);
   color: #ffffff;
   font-size: 18px;
@@ -160,12 +160,18 @@ table th,td{
   transition: 0.3s;
   box-shadow: 0px 0px 5px rgba(255,255,255,0.6) !important;
 }
-.btn.btn-1:hover {
+.btn:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+}
+.btn-1{
+  background: linear-gradient(to bottom, #51c137 0%, #115800 100%);
+}
+.btn-2{
+  background: linear-gradient(to bottom, #24a9ec 0%, #043b50 100%);
 }
 
 .box.box-1{
@@ -178,7 +184,7 @@ table th,td{
     padding: 24px;
     margin: 20px auto;
     line-height: 1.42857143;
-    background-color: #fff;
+    background-color: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 4px;
     -webkit-transition: border .2s ease-in-out;
@@ -186,22 +192,14 @@ table th,td{
     transition: border .2s ease-in-out;
 }
 
-.profile img{
-    margin-bottom: 20px;
-}
-
-.profile img:hover{
-    left: .1em;
-}
-
 .pic{
     height: 300px;
     width: 300px;
     overflow: hidden;
-    margin: 20px;
+    margin: 20px auto;
     border: 10px solid white;
-    -webkit-box-shadow: 5px 5px 5px #111;
-    box-shadow: 5px 5px 5px #111;
+    -webkit-box-shadow: 5px 5px 5px #696666;
+    box-shadow: 5px 5px 5px #696666;
 }
 
 .focus {
@@ -213,7 +211,7 @@ table th,td{
 }
 
 .focus:hover {
-  border: 70px solid #000;
+  border: 40px solid #696666;
   border-radius: 50%;
 }
 

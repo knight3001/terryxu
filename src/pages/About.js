@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Pdf from '../img/resume.pdf';
-import PdfIcon from '../img/pdf.ico';
 import Photo from '../img/profile.jpg';
 
 export class About extends Component {
@@ -26,13 +24,6 @@ export class About extends Component {
                                 understanding of cross-browser/platform considerations.
                             </div>
                         </div>
-                    </div>
-
-                    <div className="fadeInRight animated" style={{ animationDelay: "0.6s", marginTop: "20px" }}>
-                        <a href={Pdf} className="btn-default btn btn-1" target="_blank">
-                            <img src={PdfIcon} width="18" height="18" className="icon-small" />
-                            DOWNLOAD MY RESUME
-                        </a>
                     </div>
 
                 </div>
