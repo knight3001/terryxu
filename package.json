@@ -2,7 +2,7 @@
   "name": "terryxu",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://knight3001.github.io/terryxu/",
+  "homepage": "http://terryxu.com",
   "repository": {
     "type": "git",
     "url": "git@github.com:knight3001/terryxu.git"
@@ -19,14 +19,17 @@
     "gh-pages": "^1.0.0",
     "react-scripts": "1.0.11",
     "eslint": "^4.0.0",
-    "eslint-plugin-react": "^7.0.1"
+    "eslint-plugin-react": "^7.0.1",
+    "lite-server":"2.3.0"
   },
   "scripts": {
     "start": "set PORT=7070 && react-scripts start",
     "build": "react-scripts build",
+    "windows-build": "react-scripts build && xcopy /f /y build wwwroot",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "dev": "lite-server"
   }
 }
