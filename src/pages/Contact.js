@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Header, Icon, Segment } from 'semantic-ui-react';
 
 import Github from '../img/github.png';
 import Linkedin from '../img/linkedin.png';
@@ -7,10 +8,16 @@ export class Contact extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="fadeInRight animated">
-                        <h3 className="title title-1">CONTACT ME</h3>
+            <div>
+                <Header as='h2' icon textAlign='center' className="fadeInRight animated">
+                    <Icon name='send' circular />
+                    <Header.Content>
+                        CONTACT ME
+                    </Header.Content>
+                </Header>
+
+                <Segment raised>
+                    <div className="fadeInRight animated" style={{ animationDelay: "0.3s" }}>
                         <span className="flat-filled" id="filled-email">
                             <svg className="flat_icon" xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 100 100">
                                 <path className="circle" d="M50,2.125c26.441,0,47.875,21.434,47.875,47.875c0,26.441-21.434,47.875-47.875,47.875C17.857,97.875,2.125,76.441,2.125,50C2.125,23.559,23.559,2.125,50,2.125z"></path>
@@ -22,23 +29,23 @@ export class Contact extends Component {
                                 </g>
                             </svg>
                         </span>
-                        <div className="mail shake animated" style={{ animationDelay: "0.7s" }}>
+                        <div className="mail shake animated text-link" style={{ animationDelay: "1.5s" }}>
                             <a href="mailto:terry@bneing.com?Subject=Contact%20Base" target="_top">terry@bneing.com</a>
                         </div>
                     </div>
 
-                    <div className="fadeInRight animated" style={{ animationDelay: "0.3s" }}>
-                        <h3 className="title title-1" >OR FIND ME ON</h3>
+                    <div className="fadeInRight animated" style={{ animationDelay: "0.6s" }}>
+                        <Header as='h3' className="title-1" style={{margin: "20px 0"}}>OR FIND ME ON</Header>
                     </div>
 
-                    <span className="fadeInRight animated icon-big" style={{ animationDelay: "0.6s", marginRight: "20px" }} title="Github">
-                        <a href="https://github.com/knight3001" target="_blank" rel="noopener noreferrer"><img src={Github} width="30" height="30" alt="Github Jump" /></a>
-                    </span>
+                    <a href="https://github.com/knight3001" target="_blank" rel="noopener noreferrer">
+                        <Icon name="github alternate" size="huge" className="fadeInRight animated" style={{ animationDelay: "0.9s", marginRight: "20px" }} />
+                    </a>
 
-                    <span className="fadeInRight animated icon-big" style={{ animationDelay: "0.9s" }} title="LinkedIn">
-                        <a href="https://www.linkedin.com/in/terry-xu-57bb3292/" target="_blank" rel="noopener noreferrer"><img src={Linkedin} width="30" height="30" alt="LinkedIn Jump" /></a>
-                    </span>
-                </div>
+                    <a href="https://www.linkedin.com/in/terry-xu-57bb3292/" target="_blank" rel="noopener noreferrer">
+                        <Icon name="linkedin" size="huge" className="fadeInRight animated" style={{ animationDelay: "1.2s" }} />
+                    </a>
+                </Segment>
             </div>
         )
     }
